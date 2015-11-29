@@ -886,6 +886,7 @@ class SimpleImage {
         if( !$format ) {
             $format = $this->file_ext($filename) ?: $this->original_info['format'];
         }
+        $filename = preg_replace('"' . $this->file_ext($filename) . '$"', $format, $filename);
 
         // Create the image
         switch (strtolower($format)) {
